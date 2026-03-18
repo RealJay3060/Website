@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+p {
+    font-size: 12px;
+}
+
+h2{
+    font-size: 32px;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(1);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(1);  /* start from above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);   /* end at normal position */
+    }
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fade-up 1s ease-in-out;
+}
+
+.imageContainer {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageContainer img {
+    max-height: 100%;
+    width: auto;
+}
+
+.navOptions{
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: none;
+}
+
+.navOptions li{
+    display: inline-block;
+    padding: 0 80px 0 0;
+}
+
+.navOptions li a{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+
+.heroContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: none;
+    animation: fade-down 1s ease-in-out;
+}
+
+.menuContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10vh;
+    background-color: none;
+    height: 90vh;
+}
+
+.menuButton {
+    padding: 15px 30px;
+    font-size: 18px;
+    max-width: 20vw;
+    background-color: black;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menuButton a{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.menuDisplay{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: none;
+}
+
+.searchBar {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+.searchBar input {
+    height: 45px;
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
+
+.roadDensity {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+.roadDensityText{
+    flex: 1;
+    background-color: none;
+}
+
+.checkBoxes{
+    flex: 1;
+    background-color: none;
+}
+
+.checkBoxes input {
+    width: 18px;
+    height: 18px;
+}
+
+.averageLength {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+.averageLengthText{
+    flex: 1;
+    background-color: none;
+}
+
+.averageLengthText input {
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+}
+
+.averageDepth{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+.averageDepthText {
+    flex: 1;
+    background-color: none;
+}
+
+.averageDepthText input{
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+}
+
