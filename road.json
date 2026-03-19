@@ -1,0 +1,22 @@
+{
+  "roads": [
+    {
+      "name": "ABC Highway",
+      "type": "Highway",
+      "lengthKm": 10.5,
+
+      "potholes": {
+        "shallow": 20,
+        "medium": 8,
+        "deep": 5
+      },
+
+      "costs": {
+        "repairPerShallow": 50,
+        "repairPerMedium": 100,
+        "repairPerDeep": 200,
+        "resurfacePerKm": 15000
+      }
+    }
+  ]
+}
