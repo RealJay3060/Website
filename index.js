@@ -1,6 +1,6 @@
 let roadsData = [];
 
-// Load JSON
+
 fetch("roads.json")
   .then(res => res.json())
   .then(data => {
@@ -8,7 +8,7 @@ fetch("roads.json")
     console.log("Road data loaded.");
   });
 
-// Switch tabs
+
 function showScreen(tabId) {
   document.querySelectorAll('.tabPanel').forEach(panel => {
     panel.hidden = true;
@@ -17,7 +17,7 @@ function showScreen(tabId) {
   document.getElementById(tabId).hidden = false;
 }
 
-// Handle search
+
 function handleSearch() {
   const name = document.getElementById("roadSearch").value.trim().toLowerCase();
   const road = roadsData.find(r => r.name.toLowerCase() === name);
@@ -27,7 +27,7 @@ function handleSearch() {
     return;
   }
 
-  // Update all tabs
+
   updateCalculations(road);
   updateAboutRoad(road);
   updateCostTab(road);
@@ -38,9 +38,7 @@ function handleSearch() {
   setStatus(`Loaded road: ${road.name}`);
 }
 
-// -------------------------------
-// PLAN TAB CALCULATIONS
-// -------------------------------
+
 function updateCalculations(road) {
   const total = road.potholes.shallow + road.potholes.medium + road.potholes.deep;
 
@@ -69,9 +67,7 @@ function updateCalculations(road) {
   setText("reportOutput", generateReport(road, density, decision));
 }
 
-// -------------------------------
-// ABOUT ROAD TAB
-// -------------------------------
+
 function updateAboutRoad(road) {
   const about = document.getElementById("aboutRoadContent");
   if (!about) return;
@@ -93,9 +89,7 @@ function updateAboutRoad(road) {
   `;
 }
 
-// -------------------------------
-// COST TAB
-// -------------------------------
+
 function updateCostTab(road) {
   const costArea = document.getElementById("costTabContent");
   if (!costArea) return;
@@ -121,9 +115,7 @@ function updateCostTab(road) {
   `;
 }
 
-// -------------------------------
-// DECAY TAB
-// -------------------------------
+
 function updateDecayTab(road) {
   const decayArea = document.getElementById("decayTabContent");
   if (!decayArea) return;
@@ -141,7 +133,7 @@ function updateDecayTab(road) {
   `;
 }
 
-// Decay model
+
 function estimateDecay(road) {
   const total = road.potholes.shallow + road.potholes.medium + road.potholes.deep;
 
@@ -156,9 +148,7 @@ function estimateDecay(road) {
   return Math.ceil((target - deep) / weeklyGrowth);
 }
 
-// -------------------------------
-// NUMBER TAB
-// -------------------------------
+
 function updateNumberTab(road) {
   const numArea = document.getElementById("numberTabContent");
   if (!numArea) return;
@@ -176,9 +166,7 @@ function updateNumberTab(road) {
   `;
 }
 
-// -------------------------------
-// SUMMARY TAB
-// -------------------------------
+
 function updateSummaryTab(road) {
   const summary = document.getElementById("summaryTabContent");
   if (!summary) return;
@@ -198,9 +186,7 @@ function updateSummaryTab(road) {
   `;
 }
 
-// -------------------------------
-// REPORT GENERATOR (used in Plan tab)
-// -------------------------------
+
 function generateReport(road, density, decision) {
   const total = road.potholes.shallow + road.potholes.medium + road.potholes.deep;
 
@@ -213,7 +199,7 @@ function generateReport(road, density, decision) {
   `;
 }
 
-// Utility
+
 function setText(id, text) {
   const el = document.getElementById(id);
   if (el) el.textContent = text;
@@ -224,7 +210,7 @@ function setStatus(msg) {
   if (el) el.textContent = msg;
 }
 
-// Load road from map click
+
 function loadRoad(name) {
   document.getElementById("roadSearch").value = name;
   handleSearch();
