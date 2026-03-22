@@ -18,11 +18,15 @@
 
         <div class="navOptions">
             <ul>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Settings</a></li>
+                <li><a href="#" onclick="showScreen('reportsTab')">Reports</a></li>
+                <li><a href="#" onclick="showScreen('settingsTab')">Settings</a></li>
+                <!-- <button onclick="showScreen('teamTab')">Team</button> -->
+                 <li><a href="#" onclick="showScreen('teamTab')">Team</a></li>
+
             </ul>
         </div>
     </nav>
+
 
  
     <div class="heroContainer">
@@ -56,8 +60,15 @@
 
         </div>
 
+
         
         <div class="menuDisplay">
+
+            <div id="teamTab" class="tabPanel" hidden>
+        <h2>Our Team</h2>
+        <div id="teamCards" class="teamContainer"></div>
+            </div>
+
 
     <div id="planTab" class="tabPanel">
         <h2>Plan Next Route</h2>
@@ -97,7 +108,9 @@
 
     <div id="numberTab" class="tabPanel" hidden>
         <h2>Pothole Numbers</h2>
-        <div id="numberTabContent" class="resultsContainer"></div>
+        <div id="numberTabContent" class="resultsContainer">
+            
+        </div>
     </div>
 
     <div id="summaryTab" class="tabPanel" hidden>
@@ -105,7 +118,79 @@
         <div id="summaryTabContent" class="resultsContainer"></div>
     </div>
 
+    <div id="reportsTab" class="tabPanel" hidden>
+        <h2>All Road Reports</h2>
+        <div id="reportsTabContent" class="resultsContainer">
+
+        </div>
+
+
     </div>
+    <div id="settingsTab" class="tabPanel" hidden>
+    <h2>Settings</h2>
+
+    <div class="resultsContainer">
+
+        
+        <div class="resultCard">
+            <h3>Theme Mode</h3>
+            <label><input type="radio" name="theme" value="light" onclick="setTheme('light')"> Light</label><br>
+            <label><input type="radio" name="theme" value="dark" onclick="setTheme('dark')"> Dark</label><br>
+            <label><input type="radio" name="theme" value="contrast" onclick="setTheme('contrast')"> High Contrast</label>
+        </div>
+
+        
+        <div class="resultCard">
+            <h3>Unit Preferences</h3>
+            <label>Distance:
+                <select id="unitDistance" onchange="updateUnits()">
+                    <option value="km">Kilometers</option>
+                    <option value="miles">Miles</option>
+                </select>
+            </label><br><br>
+
+            <label>Currency:
+                <select id="unitCurrency" onchange="updateUnits()">
+                    <option value="USD">USD</option>
+                    <option value="BBD">BBD</option>
+                    <option value="CAD">CAD</option>
+                </select>
+            </label>
+        </div>
+
+        
+        <div class="resultCard">
+            <h3>Alert Thresholds</h3>
+            <label>Max Density (potholes/km):
+                <input type="number" id="densityThreshold" value="5" onchange="updateAlerts()">
+            </label><br><br>
+
+            <label>Deep Pothole % Warning:
+                <input type="number" id="deepThreshold" value="50" onchange="updateAlerts()">%
+            </label><br><br>
+
+            <label>Cost Difference Alert ($):
+                <input type="number" id="costThreshold" value="5000" onchange="updateAlerts()">
+            </label>
+        </div>
+
+        
+        <div class="resultCard">
+            <h3>Simulation Controls</h3>
+            <label>Weekly Growth Rate:
+                <input type="range" id="growthRate" min="0" max="5" value="1" oninput="updateSimulation()">
+            </label>
+            <p id="growthRateLabel">Growth Rate: 1 pothole/week</p>
+        </div>
+
+       
+        <div class="resultCard">
+            <h3>Reset Dashboard</h3>
+            <button onclick="resetDashboard()">Reset All Data</button>
+        </div>
+
+    </div>
+</div>
     </div>
 
     </div>
