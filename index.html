@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="indexStylesheet.css">
-    <link rel="stylesheet" href="index.js">
+    <script src="index.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -17,6 +17,7 @@
             <ul>
                 <li><a href="#">Reports</a></li>
                 <li><a href="#">Settings</a></li>
+                <li id="loginLogoutLi"><a href="login.html">Login</a></li>
             </ul>
         </div>
     </nav>
@@ -24,74 +25,36 @@
     <div class="heroContainer">
         <div class="menuContainer">
             <div class="menuButton">
-                <a href="#" onclick="updateDisplay('Plan Next Route info goes here!')">Plan Next Route</a>
+                <a href="#" onclick="updateDisplay('plan')">Plan Next Route</a>
             </div>
             
             <div class="menuButton">
-                <a href="#" onclick="updateDisplay('About Road info goes here!')">About Road</a>
+                <a href="#" onclick="updateDisplay('about')">About Road</a>
             </div>
 
             <div class="menuButton">
-                <a href="#" onclick="updateDisplay('Estimate Cost info goes here!')">Estimate Cost</a>
+                <a href="#" onclick="updateDisplay('estimate-cost')">Estimate Cost</a>
             </div>
 
             <div class="menuButton">
-                <a href="#" onclick="updateDisplay('Road Cost info goes here!')">Road Cost</a>
+                <a href="#" onclick="updateDisplay('road-cost')">Road Cost</a>
             </div>
 
             <div class="menuButton">
-                <a href="#" onclick="updateDisplay('Decay info goes here!')">Decay</a>
+                <a href="#" onclick="updateDisplay('decay')">Decay</a>
             </div>
 
             <div class="menuButton">
-                <a href="#" onclick="updateDisplay('Number info goes here!')">Number</a>
+                <a href="#" onclick="updateDisplay('number')">Number</a>
             </div>
 
             <div class="menuButton">
-                <a href="#" onclick="updateDisplay('Road Summary info goes here!')">Road Summary</a>
-            </div>
-            
+                <a href="#" onclick="updateDisplay('road-summary')">Road Summary</a>
+            </div>  
         </div>
 
         <div class="menuDisplay">
-            <div class="searchBar">
-                <input type="text" placeholder="Please enter a road name...">
-            </div>
-
-            <div class="roadDensity">
-                <div class="raodDensityText">
-                    <h2>Road Density</h2>
-                </div>
-                <div class="checkBoxes">
-                    <label>
-                        <input type="checkbox">Shallow
-                    </label>
-                    <label>
-                        <input type="checkbox"> Medium
-                    </label>
-                    <label>
-                        <input type="checkbox"> Deep
-                    </label>
-                </div>
-            </div>
-
-            <div class="averageLength">
-                <div class="averageLengthHeader">
-                    <h2>Average Length Between Potholes</h2>
-                </div>
-                <div class="averageLengthText">
-                    <input type="text" placeholder="Info...">
-                </div>
-            </div>
-
-            <div class="averageDepth">
-                <div class="averageDepthHeader">
-                    <h2>Average Depth of Potholes</h2>
-                </div>
-                <div class="averageDepthText">
-                    <input type="text" placeholder="Info...">
-                </div>
-            </div>
+            <div id="plan-next-route"></div>
         </div>
     </div>
 </body>

@@ -81,6 +81,10 @@ nav{
     color: black;
 }
 
+.navOptions li a:hover {
+    font-weight: bold;
+}
+
 .heroContainer{
     display: flex;
     justify-content: center;
@@ -121,6 +125,15 @@ nav{
 .menuDisplay{
     flex: 3;
     display: flex;
+    overflow-y: auto;
+    background-color: none;
+}
+
+/* Plan Next Route */
+
+#plan-next-route {
+    display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -212,4 +225,76 @@ nav{
     font-size: 12px;
     border: 1px solid #ccc;
 }
+
+/* All About The Roads */
+
+#aboutRoadSearchBar{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+#aboutRoadSearchBar input {
+    height: 45px;
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
+
+.nameOfRoad {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+.typeOfRoad {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+.lengthOfRoad {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+/* Estimate Cost */
+
+#estimateCostSearchBar {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+#estimateCostSearchBar input {
+    height: 45px;
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
+
+
 
